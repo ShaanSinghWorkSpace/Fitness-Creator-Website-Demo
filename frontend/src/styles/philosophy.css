@@ -1,0 +1,114 @@
+.philosophy {
+    background-color: var(--color-background);
+}
+
+.philosophy-header {
+    display: grid;
+    grid-template-columns: 1fr 0.55fr;
+    gap: var(--space-10);
+    align-items: end;
+
+    margin-bottom: var(--space-10);
+}
+
+.philosophy-header h2 {
+    max-width: 650px;
+
+    font-size: clamp(42px, 5vw, 68px);
+    letter-spacing: -0.055em;
+}
+
+.philosophy-header > p {
+    max-width: 390px;
+
+    justify-self: end;
+
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.philosophy-grid {
+    border-top: 1px solid var(--color-border);
+}
+
+.principle {
+    display: grid;
+    grid-template-columns: 80px 1fr 30px;
+    align-items: start;
+    gap: var(--space-7);
+
+    padding-block: var(--space-7);
+
+    border-bottom: 1px solid var(--color-border);
+
+    transition: padding-left var(--transition-normal);
+}
+
+.principle:hover {
+    padding-left: var(--space-4);
+}
+
+.principle-number {
+    color: var(--color-primary);
+
+    font-family: var(--font-heading);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.principle-content h3 {
+    font-size: 24px;
+    letter-spacing: -0.03em;
+}
+
+.principle-content p {
+    max-width: 620px;
+
+    margin-top: var(--space-3);
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.principle-icon {
+    margin-top: 4px;
+
+    color: var(--color-text-muted);
+
+    transition:
+        color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.principle:hover .principle-icon {
+    color: var(--color-primary);
+    transform: translate(3px, -3px);
+}
+
+@media (max-width: 900px) {
+    .philosophy-header {
+        grid-template-columns: 1fr;
+        gap: var(--space-5);
+    }
+
+    .philosophy-header > p {
+        justify-self: start;
+    }
+}
+
+@media (max-width: 600px) {
+    .principle {
+        grid-template-columns: 40px 1fr 20px;
+        gap: var(--space-4);
+
+        padding-block: var(--space-6);
+    }
+
+    .principle-content h3 {
+        font-size: 20px;
+    }
+
+    .principle-content p {
+        font-size: 13px;
+    }
+}

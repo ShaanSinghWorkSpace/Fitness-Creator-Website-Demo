@@ -4,8 +4,19 @@ import creatorData from "../data/creatorData";
 import "../styles/hero.css";
 
 function Hero() {
+    const scrollToSection = (id, offset = 0) => {
+        const section = document.getElementById(id);
+
+        if (!section) return;
+
+        window.scrollTo({
+            top: section.offsetTop - offset,
+            behavior: "smooth",
+        });
+    };
+
     return (
-        <section className="hero">
+        <section className="hero" id="home">
 
             <div className="hero-background">
                 <div className="hero-glow"></div>
@@ -74,21 +85,27 @@ function Hero() {
                             ease: "easeOut",
                         }}
                     >
-                        <a
-                            href="#consultation"
+                        <button
+                            type="button"
                             className="btn btn-primary"
+                            onClick={() =>
+                                scrollToSection("consultation", -10)
+                            }
                         >
                             Start Your Journey
                             <FiArrowUpRight />
-                        </a>
+                        </button>
 
-                        <a
-                            href="#about"
+                        <button
+                            type="button"
                             className="btn btn-secondary"
+                            onClick={() =>
+                                scrollToSection("about", -70)
+                            }
                         >
                             <FiPlay />
                             Meet {creatorData.name.split(" ")[0]}
-                        </a>
+                        </button>
                     </motion.div>
 
                     <motion.div
